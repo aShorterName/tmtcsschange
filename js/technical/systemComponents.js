@@ -46,7 +46,7 @@ var systemComponents = {
 				can: ((player[layer].unlocked || tmp[layer].canReset) && tmp[layer].isLayer) || (!tmp[layer].isLayer && tmp[layer].canClick),
 				front: !tmp.scrolled,
 			}"
-			v-bind:style="constructNodeStyle(layer)">
+			v-bind:style="[constructNodeStyle(layer), {'border': '1px solid '+tinycolor(tmp[layer].color).darken(4).toHexString(), 'text-shadow': '0px 1px 0px '+ tinycolor(tmp[layer].color).lighten(30).toHexString(), 'box-shadow': '3px 4px 0px 0px '+tinycolor(tmp[layer].color).darken(10).toHexString()}]">
 			<span class="nodeLabel" v-html="(abb !== '' && tmp[layer].image === undefined) ? abb : '&nbsp;'"></span>
 			<b-tooltip
       v-if="tmp[layer].tooltip != ''"
