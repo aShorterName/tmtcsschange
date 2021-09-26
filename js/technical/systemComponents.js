@@ -32,6 +32,7 @@ var systemComponents = {
 
 
 			v-bind:class="{
+				btn: true,
 				treeNode: tmp[layer].isLayer,
 				treeButton: !tmp[layer].isLayer,
 				smallNode: size == 'small',
